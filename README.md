@@ -1,9 +1,9 @@
 # AI-Powered-Cross-Border-Finance-Assistant-for-International-Students
-My first repository on GitHub."
+An AI agent that helps international students manage money across borders.b."
 ## Team
-- Md. Bappi Pramanik (Team Leader), Ufa University of Science and Technology
-- [Teammate 2] UUST RUSSIA
-- [Teammate 3], City University Bangladesh
+- Md. Bappi Pramanik (Team Leader), Ufa University of Science and Technology (UUST)
+- Muthmine Turjila Redu, Ufa University of Science and Technology (UUST)
+- MST.Jarin Subah Hia, City University Bangladesh
 
 ## What it does
 - Compares transfer routes by fee, amount received and speed
