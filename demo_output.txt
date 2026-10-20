@@ -1,0 +1,147 @@
+StudentFin AI offline demo (sample data, sandbox payments, no language model)
+
+=== 1. Compare transfer routes: 50,000 RUB to BDT ===
+{
+  "currency_sent": "RUB",
+  "currency_received": "BDT",
+  "options": [
+    {
+      "route": "Money transfer app",
+      "fee": 600.0,
+      "recipient_gets": 66268.29,
+      "days": 1
+    },
+    {
+      "route": "Card-based transfer",
+      "fee": 1250.0,
+      "recipient_gets": 65396.34,
+      "days": 0
+    },
+    {
+      "route": "Bank wire",
+      "fee": 1613.64,
+      "recipient_gets": 64908.54,
+      "days": 2
+    }
+  ],
+  "source": "SAMPLE DATA 2026-10-15"
+}
+
+=== 2. Study cost in Germany, 50% tuition scholarship, 200 USD stipend ===
+{
+  "currency": "USD",
+  "months": 12,
+  "tuition": 3000,
+  "living_costs": 11040,
+  "total_without_scholarship": 14040,
+  "total_with_scholarship": 10140,
+  "source": "SAMPLE DATA"
+}
+
+=== 3. Forecast: 1000 USD, income 300, expenses 700 per month ===
+{
+  "currency": "USD",
+  "forecast": [
+    {
+      "month": 1,
+      "balance": 600
+    },
+    {
+      "month": 2,
+      "balance": 200
+    },
+    {
+      "month": 3,
+      "balance": -200
+    },
+    {
+      "month": 4,
+      "balance": -600
+    },
+    {
+      "month": 5,
+      "balance": -1000
+    },
+    {
+      "month": 6,
+      "balance": -1400
+    }
+  ],
+  "shortage_alert": "ALERT: money runs out in month 3",
+  "note": "Estimate only. Loans are counted as cash; repayment is not included."
+}
+
+=== 4. Same forecast with 150 USD part-time income ===
+{
+  "currency": "USD",
+  "forecast": [
+    {
+      "month": 1,
+      "balance": 750
+    },
+    {
+      "month": 2,
+      "balance": 500
+    },
+    {
+      "month": 3,
+      "balance": 250
+    },
+    {
+      "month": 4,
+      "balance": 0
+    },
+    {
+      "month": 5,
+      "balance": -250
+    },
+    {
+      "month": 6,
+      "balance": -500
+    }
+  ],
+  "shortage_alert": "ALERT: money runs out in month 5",
+  "note": "Estimate only. Loans are counted as cash; repayment is not included."
+}
+
+=== 5. Prepare a payment over the limit (900,000 RUB): must be refused ===
+{
+  "error": "Over the limit of 2000.0 USD per payment. Not prepared."
+}
+
+=== 6. Prepare a payment of 30,000 RUB: PENDING, nothing is sent ===
+{
+  "payment_id": "6522201b",
+  "status": "PENDING - not sent",
+  "amount": 30000,
+  "currency": "RUB",
+  "recipient": "University",
+  "route": "Money transfer app"
+}
+
+>>> CONFIRMATION NEEDED: send 30000 RUB to University via Money transfer app?
+>>> Type 'yes' to confirm: no   <- scripted human answer
+
+=== 7. Execute: the human answers 'no' ===
+{
+  "status": "DECLINED by user. Nothing was sent."
+}
+
+>>> CONFIRMATION NEEDED: send 30000 RUB to University via Money transfer app?
+>>> Type 'yes' to confirm: yes   <- scripted human answer
+
+=== 8. Execute again: the human answers 'yes' (sandbox payment) ===
+{
+  "status": "SANDBOX payment executed (no real money moved)",
+  "amount": 30000,
+  "currency": "RUB",
+  "recipient": "University",
+  "route": "Money transfer app"
+}
+
+=== 9. Execute the same payment a second time: must fail ===
+{
+  "error": "Unknown payment_id."
+}
+
+Done. Every step was written to audit_log.jsonl.
