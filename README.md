@@ -1,5 +1,5 @@
 # AI-Powered-Cross-Border-Finance-Assistant-for-International-Students
-An AI agent that helps international students manage money across borders.b."
+An AI-assisted cross-border financial support platform for international students, featuring budget forecasting, transfer-route comparisons, scholarship-aware study cost estimation, and human-confirmed sandbox payment controls.."
 ## Team
 - Md. Bappi Pramanik (Team Leader), Ufa University of Science and Technology (UUST)
 - Muthmine Turjila Redu, Ufa University of Science and Technology (UUST)
